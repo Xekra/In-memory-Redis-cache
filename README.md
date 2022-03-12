@@ -1,24 +1,40 @@
-# Roman_Chulyukin_Task_1_Junior
-Implementation of in-memory Redis cache
+##Реализация in-memory Redis кеша
 
-Implementation details:
-Use Java 11
-Maven
-(optional) Containerize the application with Docker
+###Какую задачу решает проект?
+- Реализация хранения объектов в кэш памяти 
 
-Functional:
-Server providing REST API(using Spring Boot)
-Key-value storage for strings, lists, dictionary
-Implement operators: GET, SET, DEL, KEYS
+###На какие классы обратить внимание?
+- Operation содержит описание объекта, который передается post методом серверу. 
+- CacheObject содержит описание объекта, который мы передаем в хранилище кэша.
+- MapCache содержит описание хранилища данных.
 
-Additionally (not necessary)
-Possibility to set TTL for everyone key
-Realise operators: HGET, HSET, HDEL, HKEYS
-Implement saving to disk
-Scaling
-Authorization
-Load tests
-Prepared collection file in Postman with all operations
+###Как собрать и запустить ваш проект?
+- Через команду mvn install собрать проект в jar архив. <br>
+  Запустить проект можно открыв терминал в корне проекта, следующей коммандой: 
+    java -jar target/Roman_Chulyukin_Task_1_Junior-0.0.1-SNAPSHOT.jar
 
-Instruction:
-How to launch?
+- Так же проект можно запустить через intellij idea запустив на исполнение класс ImplementationRedisApplication
+
+###Примеры использования и результаты выполнения программы
+
+- Используя Postman мы отправляем серверу массив объектов Operation. 
+    - Пример написания структуры тела запроса.
+  
+      `[{
+      "commandName":"GET",    
+      "cacheObject": {
+      "key": "Roma",
+      "value": "Chulyukin"      
+      },
+      "pattern": ""
+      }]`
+  
+    - По значению ключа commandName получаем название операции(GET). Доступные операции SET, GET, DELETE, KEYS. 
+      название операции может вводиться в любом регистре. 
+  
+    - По значениям ключей key и value объекта cacheObject получаем ключ и значение объекта, который будет записан в БД.
+    
+    - По значению ключа pattern производится поиск  в БД среди ключей соответствующих этому значению.
+
+    После отправки вышеуказанного запроса мы получим значение по ключу Roma<br><br>
+- Коллекция для Postman в виде json лежит в корне проета.

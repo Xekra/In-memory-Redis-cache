@@ -1,9 +1,14 @@
 package com.chulyukin.Roman_Chulyukin_Task_1_Junior.entitys;
 
+/*
+* Создал данный клас для отправки клиентом данных,
+*  и информацией об операторе, а так же данных, которые будут записаны извлечены или удалены
+*/
 public class Operation {
-    String commandName;
-    CacheObject cacheObject;
-    String pattern;
+
+    private String commandName;
+    private CacheObject cacheObject;
+    private String pattern;
 
     public Operation(String commandName, CacheObject cacheObject, String pattern) {
         this.commandName = commandName;

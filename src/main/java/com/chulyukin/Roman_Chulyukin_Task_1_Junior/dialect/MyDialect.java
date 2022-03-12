@@ -6,7 +6,8 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Map;
-
+/* Нет пока полного понимания работы SpringBoot приложения.
+   Создал этот класс для взаимодействия сервиса с контроллером. Возможно мог бы обойтись без него.*/
 @Component
 public class MyDialect {
 

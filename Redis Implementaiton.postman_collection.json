@@ -1,0 +1,57 @@
+{
+	"info": {
+		"_postman_id": "e8c5df45-14d7-4020-91eb-bc97dbfc83a4",
+		"name": "Redis Implementaiton",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all cache object",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/rest",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Operations",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[   \r\n    {\r\n        \"commandName\":\"SET\",    \r\n        \"cacheObject\": {\r\n          \"key\": \"Vasya\",\r\n          \"value\": \"Oblomov\"\r\n        },\r\n        \"pattern\": \"\"\r\n    },\r\n    {\r\n        \"commandName\":\"SET\",    \r\n        \"cacheObject\": {\r\n          \"key\": \"Roma\",\r\n          \"value\": \"Chulyukin\"      \r\n        },\r\n        \"pattern\": \"\"\r\n    },\r\n    {\r\n        \"commandName\":\"GET\",    \r\n        \"cacheObject\": {\r\n          \"key\": \"Vasya\",\r\n          \"value\": \"Oblomov\"\r\n        },  \r\n       \"pattern\": \"\"\r\n    },\r\n    {\r\n        \"commandName\":\"KEYS\",    \r\n        \"cacheObject\": {\r\n          \"key\": \"Vasya\",\r\n          \"value\": \"Oblomov\"\r\n        },  \r\n       \"pattern\": \"a\"\r\n    },\r\n    {\r\n        \"commandName\":\"DELETE\",    \r\n        \"cacheObject\": {\r\n          \"key\": \"Vasya\",\r\n          \"value\": \"Oblomov\"\r\n        },  \r\n       \"pattern\": \"\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/rest/operation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rest",
+						"operation"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

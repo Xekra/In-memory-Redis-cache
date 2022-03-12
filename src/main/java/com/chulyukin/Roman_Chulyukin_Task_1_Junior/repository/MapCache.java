@@ -1,10 +1,13 @@
-package com.chulyukin.Roman_Chulyukin_Task_1_Junior.entitys;
+package com.chulyukin.Roman_Chulyukin_Task_1_Junior.repository;
 
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
 import java.util.stream.Collectors;
-
+/*
+Данный класс является хранилищем ключ значение.
+Хотел реализовать его как LRU Cache, но не получилось и сделал простой HashMap.
+*/
 @Repository
 public class MapCache {
 
@@ -30,7 +33,7 @@ public class MapCache {
 
     public List<String> listOfKeys(String pattern) {
         return cache.keySet().stream()
-                .filter(x -> x.contentEquals(pattern))
+                .filter(x -> x.contains(pattern))
                 .collect(Collectors.toList());
     }
 

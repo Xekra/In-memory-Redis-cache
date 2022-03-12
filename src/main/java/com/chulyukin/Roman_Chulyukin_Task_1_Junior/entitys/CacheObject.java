@@ -1,9 +1,11 @@
 package com.chulyukin.Roman_Chulyukin_Task_1_Junior.entitys;
-
+/*
+* Создал класс, чтобы хранить пару ключ значение
+*/
 public class CacheObject {
-    String key;
-    String value;
 
+    private String key;
+    private String value;
 
     public CacheObject(String key, String value) {
         this.key = key;

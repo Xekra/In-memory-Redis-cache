@@ -1,18 +1,19 @@
 package com.chulyukin.Roman_Chulyukin_Task_1_Junior.service.impl;
 
-import com.chulyukin.Roman_Chulyukin_Task_1_Junior.entitys.MapCache;
+import com.chulyukin.Roman_Chulyukin_Task_1_Junior.repository.MapCache;
 import com.chulyukin.Roman_Chulyukin_Task_1_Junior.service.MyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
-
+/*
+В этом сервисе реализовал взаимодействие с классом MapCache, который является хранилищем ключ значение.
+ */
 @Service
 public class MyServiceImpl implements MyService {
 
     @Autowired
-
     MapCache mapCache = new MapCache();
 
     @Override
@@ -23,7 +24,6 @@ public class MyServiceImpl implements MyService {
     @Override
     public void setKeyValue(String key, Object value) {
         mapCache.add(key, value);
-        //simpleCache.put(key,value);
     }
 
     @Override
@@ -34,7 +34,6 @@ public class MyServiceImpl implements MyService {
     @Override
     public Object valueByKey(String key) {
         return mapCache.get(key);
-        //return simpleCache.get(key);
     }
 
     @Override
